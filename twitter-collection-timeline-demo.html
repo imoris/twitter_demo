@@ -1,0 +1,56 @@
+<html>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<body>
+    <div id="container"></div>
+    
+<script>
+setTimeout(render,200);
+
+function render(){
+  /*
+    twttr.widgets.load(
+      document.getElementById("container")
+    );
+    
+    twttr.widgets.createTimeline(
+      {
+        sourceType: 'collection',
+        id: '393773266801659904'
+      },
+      document.getElementById('container')
+    );
+    */
+    
+    var idList = ["990935092267700230","21","22","23","24","25","26","27"];
+    
+    for(var i=0; i<idList.length;i++)
+    {
+      twttr.widgets.createTweet(idList[i],
+          document.getElementById('container')/*,{cards:"hidden"}*/
+        );
+    }
+}
+</script>
+
+
+
+</body>
+
+
+</html>
